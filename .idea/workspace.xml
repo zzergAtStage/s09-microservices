@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: Developed 2 microservices" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: core examinator added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +58,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.zergatstage.examinator.services" />
+      <recent name="org.zergatstage.examinator.dao" />
+      <recent name="org.zergatstage.examinator.model" />
       <recent name="com.zergatstage.s09history.services" />
       <recent name="services" />
     </key>
@@ -114,11 +117,28 @@
       <option name="project" value="LOCAL" />
       <updated>1709416300747</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dev: core examinator added">
+      <option name="closed" value="true" />
+      <created>1709421541515</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709421541515</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dev: core examinator added">
+      <option name="closed" value="true" />
+      <created>1709421547122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709421547122</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dev: Developed 2 microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev: Developed 2 microservices" />
+    <MESSAGE value="dev: core examinator added" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev: core examinator added" />
   </component>
 </project>
