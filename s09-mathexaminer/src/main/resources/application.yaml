@@ -1,0 +1,10 @@
+server:
+  port: 8083
+
+math:
+  max: 10
+
+spring:
+  cloud:
+    config:
+      enabled: false
