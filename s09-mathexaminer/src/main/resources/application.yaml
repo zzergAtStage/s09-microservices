@@ -3,8 +3,19 @@ server:
 
 math:
   max: 10
-
 spring:
-  cloud:
-    config:
-      enabled: false
+  application:
+    name: MATH
+  config:
+    import: optional:configserver:${CONFIG_URL:http://localhost:8888/}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
