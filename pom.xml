@@ -11,6 +11,7 @@
     <modules>
         <module>s09-mathexaminer</module>
         <module>s09-history</module>
+        <module>Examinator-core</module>
     </modules>
 
     <name>reactor-exams</name>
