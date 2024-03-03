@@ -19,7 +19,7 @@ public class ExaminatorApplication {
     @Value("${exam.title}")
     private String title;
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 100000)
     public void printTitle() {
         System.out.println("title = " + title);
     }
