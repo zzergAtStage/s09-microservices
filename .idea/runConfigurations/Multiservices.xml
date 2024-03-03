@@ -3,9 +3,9 @@
     <toRun name="ConfigServerApplication" type="Application" />
     <toRun name="DiscoveryServiceApplication" type="Application" />
     <toRun name="ExaminatorApplication" type="Application" />
+    <toRun name="ExamsApiGateway" type="Application" />
     <toRun name="HistoryExamsApp" type="Application" />
     <toRun name="MathApp" type="Application" />
-    <toRun name="MathApp (1)" type="Application" />
     <method v="2" />
   </configuration>
 </component>
