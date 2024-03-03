@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: config service with github properties folder">
-      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-mathexaminer/src/main/resources/public/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/error/error_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Multiservices.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Multiservices.xml" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="feat: api-gateway added">
+      <change afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/health/PhaseOfTheMoonHealthIndicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MathApp__1_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +20,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Dockerfile" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2d8Z1RYZmYCeaK8BP1YSZDOqSOQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -58,6 +49,9 @@
     "Application.MathApp.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "Docker.s09-history/Dockerfile.executor": "Run",
+    "Maven.discovery-service [clean].executor": "Run",
+    "Maven.discovery-service [compile].executor": "Run",
+    "Maven.discovery-service [validate].executor": "Run",
     "Maven.s09-mathexaminer [clean].executor": "Run",
     "Maven.s09-mathexaminer [compile].executor": "Run",
     "Maven.s09-mathexaminer [install].executor": "Run",
@@ -66,9 +60,13 @@
     "Maven.s09-mathexaminer [validate].executor": "Run",
     "Maven.s09-mathexaminer [verify].executor": "Run",
     "Maven.s09-microservices [clean].executor": "Run",
+    "Maven.s09-microservices [compile].executor": "Run",
+    "Maven.s09-microservices [install].executor": "Run",
     "Maven.s09-microservices [package].executor": "Run",
+    "Maven.s09-microservices [site].executor": "Run",
     "Maven.s09-microservices [test].executor": "Run",
     "Maven.s09-microservices [validate].executor": "Run",
+    "Maven.s09-microservices [verify].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -89,38 +87,22 @@
       <recent name="services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExaminatorApplication">
+  <component name="RunManager" selected="Compound.Multiservices">
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
-      <method v="2" />
-    </configuration>
-    <configuration name="s09-history/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="s09-history/Dockerfile" />
-        </settings>
+        <settings />
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.DiscoveryServiceApplication" />
       <item itemvalue="Application.ConfigServerApplication" />
+      <item itemvalue="Application.DiscoveryServiceApplication" />
       <item itemvalue="Application.ExaminatorApplication" />
-      <item itemvalue="Application.MathApp" />
-      <item itemvalue="Application.MathApp (1)" />
-      <item itemvalue="Application.HistoryExamsApp" />
       <item itemvalue="Application.ExamsApiGateway" />
+      <item itemvalue="Application.HistoryExamsApp" />
+      <item itemvalue="Application.MathApp" />
       <item itemvalue="Compound.Multiservices" />
-      <item itemvalue="Docker.s09-history/Dockerfile" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.HistoryExamsApp" />
-        <item itemvalue="Application.DiscoveryServiceApplication" />
-        <item itemvalue="Application.ExaminatorApplication" />
-        <item itemvalue="Docker.s09-history/Dockerfile" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -194,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709425844889</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: api-gateway added">
+      <option name="closed" value="true" />
+      <created>1709429795681</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709429795682</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -203,7 +193,8 @@
     <MESSAGE value="dev: dicsovery-service added" />
     <MESSAGE value="dev: dicsovery-service and eureca-clients added" />
     <MESSAGE value="dev: config service with github properties folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev: config service with github properties folder" />
+    <MESSAGE value="feat: api-gateway added" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: api-gateway added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -212,6 +203,11 @@
           <url>file://$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java</url>
           <line>59</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/HistoryServiceImpl.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
