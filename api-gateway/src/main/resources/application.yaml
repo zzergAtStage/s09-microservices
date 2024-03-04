@@ -1,20 +1,28 @@
 server:
   port: 8765
 
-
 spring:
   application:
     name: api-gateway
   cloud:
     gateway:
+      enabled: true
       routes:
         - id: MATH
-          uri: http://localhost:8083/
+          uri: lb://MATH/
           predicates:
             - Path=/MATH/**
         - id: HISTORY
-          uri: http://localhost:8085/
+          uri: lb://HISTORY/
           predicates:
             - Path=/HISTORY/**
+      httpserver:
+        wiretap: true
+  discovery:
+    locator:
+      enabled: true
+      lowerCaseServiceId: true
   main:
     web-application-type: reactive
+reactor:
+  netty: TRACE

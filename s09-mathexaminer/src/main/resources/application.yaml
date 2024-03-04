@@ -1,13 +1,14 @@
 server:
   port: 8083
 
-math:
-  max: 10
 spring:
+  main:
+    web-application-type: reactive
   application:
     name: MATH
   config:
     import: optional:configserver:${CONFIG_URL:http://localhost:8888/}
+
 
 eureka:
   client:
@@ -24,3 +25,5 @@ management:
 springdoc:
   swagger-ui:
   path: /swagger-ui.html
+
+
