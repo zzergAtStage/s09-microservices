@@ -67,6 +67,6 @@ public class ExamComposerController {
     }
 
     public String getServiceUrl(final String service, final int amount) {
-        return "http://" + service + "/exercise/random?amount=" + amount;
+        return "http://" + service + "/questions/random?amount=" + amount;
     }
 }

@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,9 +19,10 @@ import org.zergatstage.examinator.services.ExamService;
  */
 @RestController
 @RequestMapping("/exams")
+@RequiredArgsConstructor
 public class ExamController {
-    @Autowired(required = false)
-    private ExamService examService;
+
+    private final ExamService examService;
 
     @Operation(
             summary = "Check exam answers",

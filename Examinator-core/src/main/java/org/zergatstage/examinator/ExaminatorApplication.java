@@ -31,6 +31,10 @@ public class ExaminatorApplication {
     }
 
     @Bean
+    public RestTemplateBuilder restTemplateBuilder() {
+        return new RestTemplateBuilder();
+    }
+    @Bean
     @LoadBalanced
     public RestTemplate restTemplateWithZul(RestTemplateBuilder builder) {
         return builder.build();

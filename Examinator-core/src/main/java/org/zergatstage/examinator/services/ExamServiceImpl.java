@@ -1,6 +1,7 @@
 package org.zergatstage.examinator.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.zergatstage.examinator.dao.ExerciseDao;
 import org.zergatstage.examinator.model.CheckedExam;
 import org.zergatstage.examinator.model.Exercise;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * @author father
  */
+@Service
 public class ExamServiceImpl implements ExamService {
 
     @Autowired
