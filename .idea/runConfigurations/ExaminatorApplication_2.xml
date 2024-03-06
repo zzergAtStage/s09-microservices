@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ExaminatorApplication_2" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.zergatstage.examinator.ExaminatorApplication" />
+    <module name="Examinator-core" />
+    <option name="PROGRAM_PARAMETERS" value="--spring.config.location=classpath:/application.properties --server.port=8094 --spring.application.name=EXAMINATOR-instance2" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="org.zergatstage.examinator.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

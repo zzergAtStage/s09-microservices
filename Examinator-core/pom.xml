@@ -16,7 +16,7 @@
 <!--    </parent>-->
     <groupId>org.zergatstage.examinator</groupId>
     <artifactId>Examinator-core</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
@@ -88,12 +88,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <imageName>application/Examinator-core:oci</imageName>
                 </configuration>
             </plugin>
         </plugins>

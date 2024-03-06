@@ -26,7 +26,7 @@ class MathServiceImplTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
     @Test
     @DisplayName("Test RandomExercise method")

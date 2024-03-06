@@ -4,18 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="fix: fix exam module">
-      <change afterPath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/QuestionLoaderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-history/src/main/resources/default_history.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/controllers/MathControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/services/MathServiceImplTest.java" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="fix: final fix of exam module for exam generation.&#10;Update question init stack">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ExaminatorApplication_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-scripts/build-images-native.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-scripts/build-images-oci.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-scripts/docker/basic/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-history/src/test/java/com/zergatstage/s09history/services/QuestionLoaderServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-history/src/test/resources/test_history.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-mathexaminer/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/model/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/model/Section.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/HistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/HistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-history/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/QuestionLoaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/QuestionLoaderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/services/MathServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/services/MathServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +36,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Dockerfile" />
         <option value="HTML File" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -54,6 +64,7 @@
     "Application.ConfigServerApplication.executor": "Run",
     "Application.DiscoveryServiceApplication.executor": "Run",
     "Application.ExaminatorApplication.executor": "Run",
+    "Application.ExaminatorApplication_2.executor": "Run",
     "Application.ExamsApiGateway.executor": "Run",
     "Application.ExamsGateway.executor": "Run",
     "Application.HistoryExamsApp.executor": "Run",
@@ -63,13 +74,16 @@
     "Docker.s09-history/Dockerfile.executor": "Run",
     "JUnit.MathControllerTest.executor": "Run",
     "JUnit.MathServiceImplTest.getRandomMathExercise.executor": "Run",
+    "JUnit.QuestionLoaderServiceTest.executor": "Run",
     "Maven.discovery-service [clean].executor": "Run",
     "Maven.discovery-service [compile].executor": "Run",
     "Maven.discovery-service [validate].executor": "Run",
     "Maven.s09-mathexaminer [clean].executor": "Run",
     "Maven.s09-mathexaminer [compile].executor": "Run",
+    "Maven.s09-mathexaminer [deploy].executor": "Run",
     "Maven.s09-mathexaminer [install].executor": "Run",
     "Maven.s09-mathexaminer [package].executor": "Run",
+    "Maven.s09-mathexaminer [site].executor": "Run",
     "Maven.s09-mathexaminer [test].executor": "Run",
     "Maven.s09-mathexaminer [validate].executor": "Run",
     "Maven.s09-mathexaminer [verify].executor": "Run",
@@ -83,11 +97,13 @@
     "Maven.s09-microservices [verify].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/father/IdeaProjects/s09-microservices/s09-history/src/test/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -102,6 +118,9 @@
       <recent name="com.zergatstage.s09history.services" />
       <recent name="services" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/s09-history/src/test/resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -110,11 +129,12 @@
       <recent name="$PROJECT_DIR$/s09-history/src/main/resource" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zergatstage.s09history.services" />
       <recent name="com.zergatstage.s09mathexaminer.controllers" />
       <recent name="com.zergatstage.s09mathexaminer.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExaminatorApplication">
+  <component name="RunManager" selected="Application.MathApp">
     <configuration name="MathControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="s09-mathexaminer" />
       <extension name="coverage">
@@ -146,6 +166,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QuestionLoaderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="s09-history" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zergatstage.s09history.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zergatstage.s09history.services" />
+      <option name="MAIN_CLASS_NAME" value="com.zergatstage.s09history.services.QuestionLoaderServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
@@ -156,15 +192,18 @@
       <item itemvalue="Application.ConfigServerApplication" />
       <item itemvalue="Application.DiscoveryServiceApplication" />
       <item itemvalue="Application.ExaminatorApplication" />
+      <item itemvalue="Application.ExaminatorApplication_2" />
       <item itemvalue="Application.ExamsApiGateway" />
       <item itemvalue="Application.HistoryExamsApp" />
       <item itemvalue="Application.MathApp" />
       <item itemvalue="Compound.Multiservices" />
       <item itemvalue="JUnit.MathControllerTest" />
       <item itemvalue="JUnit.MathServiceImplTest.getRandomMathExercise" />
+      <item itemvalue="JUnit.QuestionLoaderServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QuestionLoaderServiceTest" />
         <item itemvalue="JUnit.MathControllerTest" />
         <item itemvalue="JUnit.MathServiceImplTest.getRandomMathExercise" />
       </list>
@@ -266,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709518497724</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix: final fix of exam module for exam generation.&#10;Update question init stack">
+      <option name="closed" value="true" />
+      <created>1709724291668</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709724291668</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -278,7 +325,8 @@
     <MESSAGE value="feat: api-gateway added" />
     <MESSAGE value="fix: api-gateway routing to endpoints" />
     <MESSAGE value="fix: fix exam module" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix exam module" />
+    <MESSAGE value="fix: final fix of exam module for exam generation.&#10;Update question init stack" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: final fix of exam module for exam generation.&#10;Update question init stack" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
