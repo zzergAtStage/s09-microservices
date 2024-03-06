@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Map;
+
 /**
  * @author father
  */
@@ -18,7 +20,7 @@ public class ExamDirectController extends ExamComposerController {
     }
 
     @Override
-    public String getServiceUrl(final String service, final int amount) {
-        return "http://provider-" + service + ":8080/exercise/random?amount=" + amount;
+    public String getServiceUrl(Map.Entry<String, Integer> entry) {
+        return "http://provider-" + entry.getKey() + ":8080/exercise/random?amount=" + entry.getValue();
     }
 }

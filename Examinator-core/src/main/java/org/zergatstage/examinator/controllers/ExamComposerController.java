@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import org.zergatstage.examinator.model.Section;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -28,7 +30,6 @@ import static java.util.stream.Collectors.toList;
 @RequestMapping("/exams")
 public class ExamComposerController {
     private final RestTemplate restTemplate;
-
     private int number = 1;
 
     @Autowired
@@ -57,16 +58,16 @@ public class ExamComposerController {
     )
     @PostMapping("/exam")
     public Exam createExam(@RequestBody Map<String, Integer> examSpec) {
-        List<Section> sections = examSpec.entrySet().stream().map(entry -> {
-            String title = entry.getKey();
-            String url = getServiceUrl(title, entry.getValue());
-            Exercise[] exercises = restTemplate.getForObject(url, Exercise[].class);
-            return Section.builder().exercises(Arrays.asList(exercises)).title(title).build();
-        }).collect(toList());
+        List<Section> sections = examSpec.entrySet().stream()
+                .map(this::getServiceUrl)
+                .map(url -> restTemplate.getForObject(url, Exercise[].class))
+                .map(Arrays::asList)
+                .map(section -> Section.builder().exercises(section).build())
+                .toList();
         return Exam.builder().sections(sections).title("Best exam #" + number++).build();
     }
 
-    public String getServiceUrl(final String service, final int amount) {
-        return "http://" + service + "/questions/random?amount=" + amount;
+    public String getServiceUrl(Map.Entry<String, Integer> entry) {
+        return "http://" + entry.getKey() + "/api/questions/random?amount=" + entry.getValue();
     }
 }

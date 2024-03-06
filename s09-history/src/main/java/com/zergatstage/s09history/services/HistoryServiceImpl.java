@@ -38,7 +38,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     @Override
-    @EventListener(ContextRefreshedEvent.class)
+    @EventListener(ContextRefreshedEvent.class) //
     public void fillDB() {
         Logger.getAnonymousLogger().info("Fill DB with some data");
         List<ExamQuestion> exercises = Arrays.asList(

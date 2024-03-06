@@ -16,5 +16,4 @@ public class Section {
     private String description;
     @Singular
     private List<Exercise> exercises;
-
 }
