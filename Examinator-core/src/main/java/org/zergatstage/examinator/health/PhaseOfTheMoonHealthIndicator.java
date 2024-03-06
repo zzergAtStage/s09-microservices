@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
+/** This class is useful to create custom health indicators
  * @author father
  */
 @Component

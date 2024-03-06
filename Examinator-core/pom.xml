@@ -88,7 +88,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <imageName>application/Examinator-core:oci</imageName>
+                    <imageName>application/examinator:oci</imageName>
                 </configuration>
             </plugin>
         </plugins>

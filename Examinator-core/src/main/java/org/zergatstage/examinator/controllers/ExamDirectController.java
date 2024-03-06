@@ -20,7 +20,7 @@ public class ExamDirectController extends ExamComposerController {
     }
 
     @Override
-    public String getServiceUrl(Map.Entry<String, Integer> entry) {
-        return "http://provider-" + entry.getKey() + ":8080/exercise/random?amount=" + entry.getValue();
+    public String getServiceUrl(String providerName, int amount) {
+        return "http://provider-" + providerName + ":8080/exercise/random?amount=" + amount;
     }
 }

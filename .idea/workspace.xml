@@ -4,28 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="fix: final fix of exam module for exam generation.&#10;Update question init stack">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ExaminatorApplication_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build-scripts/build-images-native.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build-scripts/build-images-oci.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build-scripts/docker/basic/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-history/src/test/java/com/zergatstage/s09history/services/QuestionLoaderServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-history/src/test/resources/test_history.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-mathexaminer/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: docker files and build scripts">
+      <change afterPath="$PROJECT_DIR$/build-scripts/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/QuestionLoaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/QuestionLoaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/services/MathServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/src/test/java/com/zergatstage/s09mathexaminer/services/MathServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-scripts/build-images-native.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build-scripts/build-images-native.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +57,8 @@
     "Application.MathApp (1).executor": "Run",
     "Application.MathApp.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.build-scripts.examinator: Compose Deployment.executor": "Run",
+    "Docker.build-scripts: Compose Deployment.executor": "Run",
     "Docker.s09-history/Dockerfile.executor": "Run",
     "JUnit.MathControllerTest.executor": "Run",
     "JUnit.MathServiceImplTest.getRandomMathExercise.executor": "Run",
@@ -134,7 +122,7 @@
       <recent name="com.zergatstage.s09mathexaminer.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MathApp">
+  <component name="RunManager" selected="Compound.Multiservices">
     <configuration name="MathControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="s09-mathexaminer" />
       <extension name="coverage">
@@ -182,9 +170,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build-scripts: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="build-scripts/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build-scripts.examinator: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="examinator" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="build-scripts/docker-compose.yml" />
+        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -197,12 +210,16 @@
       <item itemvalue="Application.HistoryExamsApp" />
       <item itemvalue="Application.MathApp" />
       <item itemvalue="Compound.Multiservices" />
+      <item itemvalue="Docker.build-scripts.examinator: Compose Deployment" />
+      <item itemvalue="Docker.build-scripts: Compose Deployment" />
       <item itemvalue="JUnit.MathControllerTest" />
       <item itemvalue="JUnit.MathServiceImplTest.getRandomMathExercise" />
       <item itemvalue="JUnit.QuestionLoaderServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.build-scripts: Compose Deployment" />
+        <item itemvalue="Docker.build-scripts.examinator: Compose Deployment" />
         <item itemvalue="JUnit.QuestionLoaderServiceTest" />
         <item itemvalue="JUnit.MathControllerTest" />
         <item itemvalue="JUnit.MathServiceImplTest.getRandomMathExercise" />
@@ -313,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709724291668</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="dev: docker files and build scripts">
+      <option name="closed" value="true" />
+      <created>1709761658640</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709761658640</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -326,7 +351,8 @@
     <MESSAGE value="fix: api-gateway routing to endpoints" />
     <MESSAGE value="fix: fix exam module" />
     <MESSAGE value="fix: final fix of exam module for exam generation.&#10;Update question init stack" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: final fix of exam module for exam generation.&#10;Update question init stack" />
+    <MESSAGE value="dev: docker files and build scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev: docker files and build scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

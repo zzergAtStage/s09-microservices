@@ -58,16 +58,17 @@ public class ExamComposerController {
     )
     @PostMapping("/exam")
     public Exam createExam(@RequestBody Map<String, Integer> examSpec) {
-        List<Section> sections = examSpec.entrySet().stream()
-                .map(this::getServiceUrl)
-                .map(url -> restTemplate.getForObject(url, Exercise[].class))
-                .map(Arrays::asList)
-                .map(section -> Section.builder().exercises(section).build())
-                .toList();
+        List<Section> sections = examSpec.entrySet().stream().map(entry -> {
+            String title = entry.getKey();
+            String url = getServiceUrl(title, entry.getValue());
+            Exercise[] exercises = restTemplate.getForObject(url, Exercise[].class);
+            assert exercises != null;
+            return Section.builder().exercises(Arrays.asList(exercises)).title(title).build();
+        }).collect(toList());
         return Exam.builder().sections(sections).title("Best exam #" + number++).build();
     }
 
-    public String getServiceUrl(Map.Entry<String, Integer> entry) {
-        return "http://" + entry.getKey() + "/api/questions/random?amount=" + entry.getValue();
+    public String getServiceUrl(String provider, int amount) {
+        return "http://" + provider + "/api/questions/random?amount=" + amount;
     }
 }
