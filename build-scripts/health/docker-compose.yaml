@@ -23,3 +23,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
       - /tmp/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+
+networks:
+  backend:
+    driver: bridge

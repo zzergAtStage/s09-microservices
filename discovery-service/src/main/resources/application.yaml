@@ -1,21 +1,35 @@
 server:
   port: 8761
-  enable-self-preservation: false
+
+spring:
+  application:
+    name: discovery-service
 
 
 eureka:
   client:
-  register-with-eureka: false
-  fetch-registry: false
-  service-url:
+   register-with-eureka: false
+   fetch-registry: false
+   service-url:
     defaultZone: http://localhost:${server.port:8761}/eureka
+
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
   instance:
-    metadataMap:
-      "prometheus.scrape": "true"
-      "prometheus.path": "/actuator/prometheus"
-      "prometheus.port": "8080"
+
+    metadata-map:
+      management.port: ${server.port} # Port for management endpoints
+      status-page-url-path: /actuator/info # Endpoint for health check
+      health-check-url-path: /actuator/health # Endpoint for health check
+      lease-renewal-interval-in-seconds: 10 # Eureka renewal interval
+      lease-expiration-duration-in-seconds: 30 # Eureka expiration duration
+
 management:
-  metrics:
-    export:
-      prometheus:
-        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always # Show detailed health information

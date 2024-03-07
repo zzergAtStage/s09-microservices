@@ -20,6 +20,12 @@ cd ..
 echo "Building JAR files"
 mvn clean package -DskipTest
 
+docker rmi application/config-server:naive
+docker rmi application/discovery-service:naive
+docker rmi application/examinator:naive
+docker rmi application/provider-math:naive
+docker rmi application/provider-history:naive
+
 echo "Building Docker images"
 build_basic ./config-server/target/config-server-${APP_VERSION}.jar application/config-server 8888
 build_basic ./discovery-service/target/discovery-service-${APP_VERSION}.jar application/discovery-service 8761

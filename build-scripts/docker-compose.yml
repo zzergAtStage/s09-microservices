@@ -1,102 +1,65 @@
-version: '2.4'
+version: '3.9'
 
 services:
-  service-discovery:
-    image: application/discovery-service:naive
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    environment:
-      SERVER_PORT: 8080
-    ports:
-      - 8761:8080
-
-
   service-config:
+    container_name: s09-service-config
+    #pull_policy: always -- why?
     image: application/config-server:naive
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      service-discovery:
-        condition: service_healthy
-    environment:
-      SERVER_PORT: 8080
-      DISCOVERY_URL: http://service-discovery:8080/eureka/
-
-  api-gateway:
-    image: application/api-gateway:naive
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      service-discovery:
-        condition: service_healthy
-    environment:
-      SERVER_PORT: 8080
-      DISCOVERY_URL: http://service-discovery:8080/eureka/
     ports:
-      - 8765:8080
+      - "8888:8888"
+    healthcheck:
+      test: "curl --fail --silent localhost:8888/actuator/health/readiness | grep UP || exit 1"
+      interval: 2s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    networks:
+      backend:
+        aliases:
+          - "service-config"
+
+  service-discovery:
+    container_name: service-discovery-spring
+    #pull_policy: always -- why?
+    image: application/discovery-service:naive
+    ports:
+      - "8761:8080"
+    healthcheck:
+      test: "curl --fail --silent localhost:8761/actuator/health/readiness | grep UP || exit 1"
+      interval: 2s
+      timeout: 20s
+      retries: 5
+      start_period: 9s
+    environment:
+      SERVER_PORT: 8080
+    depends_on:
+      - service-config
+    networks:
+      backend:
+        aliases:
+          - "service-discovery"
 
   examinator:
+    container_name: examinator-container
     image: application/examinator:naive
-    depends_on:
-      service-discovery:
-        condition: service_healthy
-      service-config:
-        condition: service_healthy
+    #pull_policy: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 5s
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 2s
+      timeout: 3s
       retries: 5
+      start_period: 2s
     environment:
       SERVER_PORT: 8080
-      DISCOVERY_URL: http://service-discovery:8080/eureka/
-      CONFIG_URL: http://service-config:8080/
-    ports:
-      - 8093:8080
-      - 9090:8080
-
-
-  provider-math:
-    image: application/provider-math:naive
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://service-config:8888"
     depends_on:
-      service-discovery:
-        condition: service_healthy
       service-config:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    environment:
-      SERVER_PORT: 8080
-      DISCOVERY_URL: http://service-discovery:8080/eureka/
-      CONFIG_URL: http://service-config:8080/
+    networks:
+      backend:
+        aliases:
+          - "examinator"
 
-  provider-history:
-    image: application/provider-history:naive
-    depends_on:
-      service-discovery:
-        condition: service_healthy
-      service-config:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    environment:
-      SERVER_PORT: 8080
-      DISCOVERY_URL: http://service-discovery:8080/eureka/
-      CONFIG_URL: http://service-config:8080/
-    ports:
-      - 8083:8080
+networks:
+  backend:
+    driver: bridge
