@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: docker files and build scripts">
-      <change afterPath="$PROJECT_DIR$/build-scripts/docker-compose.yml" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: gateway-api added&lt;">
+      <change afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/health/LimitsQuestions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-scripts/health/prometheus.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-scripts/run-prometheus.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-scripts/build-images-native.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build-scripts/build-images-native.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +26,9 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,59 +48,59 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConfigServerApplication.executor": "Run",
-    "Application.DiscoveryServiceApplication.executor": "Run",
-    "Application.ExaminatorApplication.executor": "Run",
-    "Application.ExaminatorApplication_2.executor": "Run",
-    "Application.ExamsApiGateway.executor": "Run",
-    "Application.ExamsGateway.executor": "Run",
-    "Application.HistoryExamsApp.executor": "Run",
-    "Application.MathApp (1).executor": "Run",
-    "Application.MathApp.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.build-scripts.examinator: Compose Deployment.executor": "Run",
-    "Docker.build-scripts: Compose Deployment.executor": "Run",
-    "Docker.s09-history/Dockerfile.executor": "Run",
-    "JUnit.MathControllerTest.executor": "Run",
-    "JUnit.MathServiceImplTest.getRandomMathExercise.executor": "Run",
-    "JUnit.QuestionLoaderServiceTest.executor": "Run",
-    "Maven.discovery-service [clean].executor": "Run",
-    "Maven.discovery-service [compile].executor": "Run",
-    "Maven.discovery-service [validate].executor": "Run",
-    "Maven.s09-mathexaminer [clean].executor": "Run",
-    "Maven.s09-mathexaminer [compile].executor": "Run",
-    "Maven.s09-mathexaminer [deploy].executor": "Run",
-    "Maven.s09-mathexaminer [install].executor": "Run",
-    "Maven.s09-mathexaminer [package].executor": "Run",
-    "Maven.s09-mathexaminer [site].executor": "Run",
-    "Maven.s09-mathexaminer [test].executor": "Run",
-    "Maven.s09-mathexaminer [validate].executor": "Run",
-    "Maven.s09-mathexaminer [verify].executor": "Run",
-    "Maven.s09-microservices [clean].executor": "Run",
-    "Maven.s09-microservices [compile].executor": "Run",
-    "Maven.s09-microservices [install].executor": "Run",
-    "Maven.s09-microservices [package].executor": "Run",
-    "Maven.s09-microservices [site].executor": "Run",
-    "Maven.s09-microservices [test].executor": "Run",
-    "Maven.s09-microservices [validate].executor": "Run",
-    "Maven.s09-microservices [verify].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/father/IdeaProjects/s09-microservices/s09-history/src/test/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Perforce"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExaminatorApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExaminatorApplication_2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExamsApiGateway.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExamsGateway.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HistoryExamsApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MathApp (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.MathApp.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.build-scripts.examinator: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.build-scripts: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.s09-history/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MathControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MathServiceImplTest.getRandomMathExercise.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QuestionLoaderServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.discovery-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.discovery-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.discovery-service [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-mathexaminer [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.s09-microservices [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/father/IdeaProjects/s09-microservices/s09-history/src/test/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Perforce&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.zergatstage.examinator.services" />
@@ -171,7 +174,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
@@ -338,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709761658640</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="dev: gateway-api added&lt;">
+      <option name="closed" value="true" />
+      <created>1709768096118</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709768096118</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -352,7 +365,8 @@
     <MESSAGE value="fix: fix exam module" />
     <MESSAGE value="fix: final fix of exam module for exam generation.&#10;Update question init stack" />
     <MESSAGE value="dev: docker files and build scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev: docker files and build scripts" />
+    <MESSAGE value="dev: gateway-api added&lt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev: gateway-api added&lt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

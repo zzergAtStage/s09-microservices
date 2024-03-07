@@ -1,0 +1,25 @@
+version: '3.7'
+# containers for the services monitoring
+
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    ports:
+      - 9091:9090
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+    volumes:
+      - /tmp/prometheus.yaml:/etc/prometheus/prometheus.yaml
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - /tmp/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml

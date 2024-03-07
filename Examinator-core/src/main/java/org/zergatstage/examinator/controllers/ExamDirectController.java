@@ -1,5 +1,6 @@
 package org.zergatstage.examinator.controllers;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,8 +16,8 @@ import java.util.Map;
 @RequestMapping("/exams-direct")
 public class ExamDirectController extends ExamComposerController {
     @Autowired
-    public ExamDirectController(RestTemplate restTemplate) {
-        super(restTemplate);
+    public ExamDirectController(RestTemplate restTemplate, MeterRegistry meterRegistry) {
+        super(restTemplate,meterRegistry);
     }
 
     @Override

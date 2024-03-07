@@ -26,4 +26,4 @@ build_basic ./discovery-service/target/discovery-service-${APP_VERSION}.jar appl
 build_basic ./Examinator-core/target/Examinator-core-${APP_VERSION}.jar application/examinator 8093
 build_basic ./s09-mathexaminer/target/s09-mathexaminer-${APP_VERSION}.jar application/provider-math 8083
 build_basic ./s09-history/target/s09-history-${APP_VERSION}.jar application/provider-history 8085
-build_basic ./api-gateway/target/api-gateway-${APP_VERSION}.jar application/api-gateway 8765
+# build_basic ./api-gateway/target/api-gateway-${APP_VERSION}.jar application/api-gateway 8765

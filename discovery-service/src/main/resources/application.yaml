@@ -1,0 +1,21 @@
+server:
+  port: 8761
+  enable-self-preservation: false
+
+
+eureka:
+  client:
+  register-with-eureka: false
+  fetch-registry: false
+  service-url:
+    defaultZone: http://localhost:${server.port:8761}/eureka
+  instance:
+    metadataMap:
+      "prometheus.scrape": "true"
+      "prometheus.path": "/actuator/prometheus"
+      "prometheus.port": "8080"
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true

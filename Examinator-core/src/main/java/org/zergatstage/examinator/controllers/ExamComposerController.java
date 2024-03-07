@@ -1,11 +1,12 @@
 package org.zergatstage.examinator.controllers;
 
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,6 @@ import org.zergatstage.examinator.model.Section;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -28,13 +28,17 @@ import static java.util.stream.Collectors.toList;
  */
 @RestController
 @RequestMapping("/exams")
+
 public class ExamComposerController {
     private final RestTemplate restTemplate;
+    private final MeterRegistry meterRegistry;
     private int number = 1;
 
+
     @Autowired
-    public ExamComposerController(@LoadBalanced RestTemplate restTemplate) {
+    public ExamComposerController(@LoadBalanced RestTemplate restTemplate, MeterRegistry meterRegistry) {
         this.restTemplate = restTemplate;
+        this.meterRegistry = meterRegistry;
     }
 
     @Operation(
@@ -59,12 +63,15 @@ public class ExamComposerController {
     @PostMapping("/exam")
     public Exam createExam(@RequestBody Map<String, Integer> examSpec) {
         List<Section> sections = examSpec.entrySet().stream().map(entry -> {
-            String title = entry.getKey();
-            String url = getServiceUrl(title, entry.getValue());
-            Exercise[] exercises = restTemplate.getForObject(url, Exercise[].class);
-            assert exercises != null;
-            return Section.builder().exercises(Arrays.asList(exercises)).title(title).build();
-        }).collect(toList());
+                String title = entry.getKey();
+                String url = getServiceUrl(title, entry.getValue());
+                Timer.Sample sample = Timer.start(meterRegistry);
+                    Exercise[] exercises = restTemplate.getForObject(url, Exercise[].class);
+                sample.stop(meterRegistry.timer("exam_request_provider","provider-tag", title));
+                assert exercises != null;
+                return Section.builder().exercises(Arrays.asList(exercises)).title(title).build();
+            }).collect(toList());
+
         return Exam.builder().sections(sections).title("Best exam #" + number++).build();
     }
 
