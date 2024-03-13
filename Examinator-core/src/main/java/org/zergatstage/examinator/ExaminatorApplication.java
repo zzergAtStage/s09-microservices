@@ -1,5 +1,6 @@
 package org.zergatstage.examinator;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +12,11 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.client.RestTemplate;
+import org.zergatstage.examinator.services.IntegrationFileGateway;
 
 @SpringBootApplication
 @EnableScheduling
+
 public class ExaminatorApplication {
 
     @Value("${exam.title}")
@@ -23,6 +26,8 @@ public class ExaminatorApplication {
     public void printTitle() {
         System.out.println("title = " + title);
     }
+
+
 
     @Bean
     @Primary
