@@ -1,0 +1,26 @@
+[
+  {
+    "questionText": "What is Java?",
+    "difficultyLevel": 2,
+    "correctAnswer": "A programming language",
+    "points": 5,
+    "choices": [
+      "A car brand",
+      "A programming language",
+      "A coffee type",
+      "An operating system"
+    ]
+  },
+  {
+    "questionText": "Which of the following is a Java keyword?",
+    "difficultyLevel": 3,
+    "correctAnswer": "class",
+    "points": 10,
+    "choices": [
+      "int",
+      "main",
+      "class",
+      "printf"
+    ]
+  }
+]

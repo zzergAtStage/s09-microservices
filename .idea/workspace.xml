@@ -4,17 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="dev: prometheus + grafana @ examinator">
-      <change afterPath="$PROJECT_DIR$/Examinator-core/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/config/IntegrationFileConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/services/IntegrationFileGateway.java" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="feat: Spring IntegrationFileGateway added. Some logging added too">
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/data/exam.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/DTO/ExamSubmissionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/DTO/UserAnswerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/RegexTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/configuration/JsonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/ExamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/QuizImportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/Exam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/ExamSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/JavaQuizQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/UserAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/ExamRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/ExamSectionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/JavaQuizRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/UserAnswerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/ExamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/IntegrationFileGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/JavaQuizService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/JavaQuizServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/QuizImportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/ExaminatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/ExaminatorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamComposerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/java/org/zergatstage/examinator/controllers/ExamDirectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/error/error_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/error/error_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/outbound/math" beforeDir="false" afterPath="$PROJECT_DIR$/data/outbound/math" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +64,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zzergAtStage&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zzergAtStage/s09-microservices.git&quot;,
+    &quot;accountId&quot;: &quot;67e1c8fa-4da9-4eb8-88a1-3949f42ffb34&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,61 +87,66 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BasicIntegrationFileConfig.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExaminatorApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExaminatorApplication_2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExamsApiGateway.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExamsGateway.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HistoryExamsApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MathApp (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.MathApp.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Docker.build-scripts.examinator: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.build-scripts: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.health/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.s09-history/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MathControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MathServiceImplTest.getRandomMathExercise.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.QuestionLoaderServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.discovery-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.discovery-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.discovery-service [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-mathexaminer [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.s09-microservices [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;s12-spring-integration&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/father/IdeaProjects/s09-microservices/Examinator-core/data/inbound&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "Application.B.executor": "Run",
+    "Application.BasicIntegrationFileConfig.executor": "Run",
+    "Application.ConfigServerApplication.executor": "Run",
+    "Application.DiscoveryServiceApplication.executor": "Run",
+    "Application.E0.executor": "Run",
+    "Application.ExaminatorApplication.executor": "Run",
+    "Application.ExaminatorApplication_2.executor": "Run",
+    "Application.ExamsApiGateway.executor": "Run",
+    "Application.ExamsGateway.executor": "Run",
+    "Application.HistoryExamsApp.executor": "Run",
+    "Application.MathApp (1).executor": "Run",
+    "Application.MathApp.executor": "Run",
+    "Application.RegexTest.executor": "Run",
+    "Application.TestClassQ1.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.build-scripts.examinator: Compose Deployment.executor": "Run",
+    "Docker.build-scripts: Compose Deployment.executor": "Run",
+    "Docker.health/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.s09-history/Dockerfile.executor": "Run",
+    "JUnit.MathControllerTest.executor": "Run",
+    "JUnit.MathServiceImplTest.getRandomMathExercise.executor": "Run",
+    "JUnit.QuestionLoaderServiceTest.executor": "Run",
+    "Maven.discovery-service [clean].executor": "Run",
+    "Maven.discovery-service [compile].executor": "Run",
+    "Maven.discovery-service [validate].executor": "Run",
+    "Maven.s09-mathexaminer [clean].executor": "Run",
+    "Maven.s09-mathexaminer [compile].executor": "Run",
+    "Maven.s09-mathexaminer [deploy].executor": "Run",
+    "Maven.s09-mathexaminer [install].executor": "Run",
+    "Maven.s09-mathexaminer [package].executor": "Run",
+    "Maven.s09-mathexaminer [site].executor": "Run",
+    "Maven.s09-mathexaminer [test].executor": "Run",
+    "Maven.s09-mathexaminer [validate].executor": "Run",
+    "Maven.s09-mathexaminer [verify].executor": "Run",
+    "Maven.s09-microservices [clean].executor": "Run",
+    "Maven.s09-microservices [compile].executor": "Run",
+    "Maven.s09-microservices [install].executor": "Run",
+    "Maven.s09-microservices [package].executor": "Run",
+    "Maven.s09-microservices [site].executor": "Run",
+    "Maven.s09-microservices [test].executor": "Run",
+    "Maven.s09-microservices [validate].executor": "Run",
+    "Maven.s09-microservices [verify].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "s12-spring-integration",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/father/IdeaProjects/s09-microservices/Examinator-core/data/inbound",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.zergatstage.examinator.services" />
@@ -134,14 +175,57 @@
       <recent name="com.zergatstage.s09mathexaminer.controllers" />
       <recent name="com.zergatstage.s09mathexaminer.services" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.zergatstage.services" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ExaminatorApplication">
-    <configuration name="BasicIntegrationFileConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.zergatstage.examinator.config.BasicIntegrationFileConfig" />
-      <module name="Examinator-core" />
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.zergatstage.Application" />
+      <module name="s09-javaexaminator" />
+      <option name="PROGRAM_PARAMETERS" value="--debug" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.zergatstage.examinator.config.*" />
+          <option name="PATTERN" value="org.zergatstage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.zergatstage.B" />
+      <module name="s09-javaexaminator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.zergatstage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegexTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.zergatstage.RegexTest" />
+      <module name="s09-javaexaminator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.zergatstage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClassQ1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.zergatstage.TestClassQ1" />
+      <module name="s09-javaexaminator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.zergatstage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,35 +253,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="build-scripts/docker-compose.yml.back: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="build-scripts/docker-compose.yml.back" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="build-scripts/docker-compose.yml.back.examinator: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="examinator" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="build-scripts/docker-compose.yml.back" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="health/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="build-scripts/health/docker-compose.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.ConfigServerApplication" />
       <item itemvalue="Application.DiscoveryServiceApplication" />
@@ -206,29 +261,22 @@
       <item itemvalue="Application.ExamsApiGateway" />
       <item itemvalue="Application.HistoryExamsApp" />
       <item itemvalue="Application.MathApp" />
-      <item itemvalue="Application.BasicIntegrationFileConfig" />
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.B" />
+      <item itemvalue="Application.RegexTest" />
+      <item itemvalue="Application.TestClassQ1" />
       <item itemvalue="Compound.Multiservices" />
-      <item itemvalue="Docker.build-scripts/docker-compose.yml.back: Compose Deployment" />
-      <item itemvalue="Docker.build-scripts/docker-compose.yml.back.examinator: Compose Deployment" />
-      <item itemvalue="Docker.health/docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Docker.build-scripts: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BasicIntegrationFileConfig" />
-        <item itemvalue="Docker.health/docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Application.Application" />
         <item itemvalue="Docker.build-scripts: Compose Deployment" />
-        <item itemvalue="Docker.build-scripts/docker-compose.yml.back: Compose Deployment" />
-        <item itemvalue="Docker.build-scripts/docker-compose.yml.back.examinator: Compose Deployment" />
+        <item itemvalue="Application.RegexTest" />
+        <item itemvalue="Application.B" />
+        <item itemvalue="Application.TestClassQ1" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-20.0.2-azul-20.0.2-4caba194b151-895bf479" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -359,7 +407,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709825497384</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: Spring IntegrationFileGateway added. Some logging added too">
+      <option name="closed" value="true" />
+      <created>1710350937974</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710350937974</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Spring IntegrationFileGateway added. Some logging added too">
+      <option name="closed" value="true" />
+      <created>1710351150688</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710351150688</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -390,23 +454,26 @@
     <MESSAGE value="dev: gateway-api added&lt;" />
     <MESSAGE value="dev: gateway-api excluded&lt;&#10;prepare to migrate to compose 3.9" />
     <MESSAGE value="dev: prometheus + grafana @ examinator" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev: prometheus + grafana @ examinator" />
+    <MESSAGE value="feat: Spring IntegrationFileGateway added. Some logging added too" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Spring IntegrationFileGateway added. Some logging added too" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/s09-history/src/main/java/com/zergatstage/s09history/services/HistoryServiceImpl.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/QuizImportController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api-gateway/src/main/java/org/zergatstage/api_gateway/ExamsGateway.java</url>
-          <line>20</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/ExamController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/ExamService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

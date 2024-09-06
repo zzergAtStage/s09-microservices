@@ -9,6 +9,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,7 @@ public class ExaminatorApplication {
     @Value("${exam.title}")
     private String title;
 
+    //just demonstrate scheduling
     @Scheduled(fixedDelay = 100000)
     public void printTitle() {
         System.out.println("title = " + title);
