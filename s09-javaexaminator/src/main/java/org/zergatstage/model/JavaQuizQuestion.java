@@ -23,6 +23,7 @@ public class JavaQuizQuestion {
     private Long id;
 
     private QuestionType questionType;
+    private String questionHeader;
     private String questionText;
     private int difficultyLevel;
     private String correctAnswer;

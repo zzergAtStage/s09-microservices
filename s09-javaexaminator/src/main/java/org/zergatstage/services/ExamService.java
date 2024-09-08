@@ -113,19 +113,20 @@ public class ExamService {
         List<ExamSection> sections = new ArrayList<>();
         for (int i = 0; i < SECTIONS_NUMBER; i++) {
             sections.add(ExamSection.builder()
-                    .sectionName("Section #" + i)
+                    .sectionName("Section #" + i + 1)
                     .userAnswers(getQuestionsPool(queue, numberQuestions))
                     .build());
 
         }
         List<ExamSection> sectionsSaved = examSectionRepository.saveAll(sections);
 
-        return Exam.builder()
+        //We're saving new exam, to grade it with submitted
+        return examRepository.save(Exam.builder()
                 .examDate(LocalDateTime.now())
                 .user(userRepository.findById(1L).orElseThrow())
                 .sections(sectionsSaved)
                 .sessionId(UUID.randomUUID().toString())
-                .build();
+                .build());
     }
 
     private List<UserAnswer> getQuestionsPool(Queue<JavaQuizQuestion> queue, int numberQuestions) {

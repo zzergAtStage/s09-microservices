@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.zergatstage.model.JavaQuizQuestion;
+import org.zergatstage.model.QuestionType;
 import org.zergatstage.repository.JavaQuizRepository;
 
 import java.io.IOException;
@@ -54,8 +55,13 @@ public class QuizImportService {
      * @throws IllegalArgumentException if validation fails
      */
     private void validateQuestion(JavaQuizQuestion question) {
-        if (question.getQuestionText() == null || question.getQuestionText().isEmpty()) {
+        if (question.getQuestionHeader() == null || question.getQuestionHeader().isEmpty()) {
             throw new IllegalArgumentException("Question text is missing");
+        }
+        if (question.getQuestionType() == QuestionType.CODE &&
+                (question.getQuestionText() == null || question.getQuestionText().isEmpty())
+                ) {
+            throw new IllegalArgumentException("Question formed incorrect");
         }
         if (question.getCorrectAnswer() == null || question.getCorrectAnswer().isEmpty()) {
             throw new IllegalArgumentException("Correct answer is missing");

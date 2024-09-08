@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="feat: s09 - javaexaminator added, and partially tested.">
-      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/QuestionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/test/java/org/zergatstage/controller/ExamControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s09-javaexaminator/src/test/java/org/zergatstage/services/ExamServiceTest.java" afterDir="false" />
+    <list default="true" id="e62fdeaa-00b9-4ab0-b097-061ed0a80697" name="Changes" comment="feat: s09 - JavaExaminationService and JUnit test  for it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examinator-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Examinator-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-history/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-history/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s09-javaexaminator/data/exam.json" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/data/exam.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s09-javaexaminator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/configuration/JsonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/configuration/JsonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/Exam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/ExamSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/ExamSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/JavaQuizQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/JavaQuizQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/UserAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/model/UserAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/JavaQuizRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/repository/JavaQuizRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/ExamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/QuizImportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/s09-javaexaminator/src/main/java/org/zergatstage/services/QuizImportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/s09-mathexaminer/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +98,9 @@
     "Maven.discovery-service [clean].executor": "Run",
     "Maven.discovery-service [compile].executor": "Run",
     "Maven.discovery-service [validate].executor": "Run",
+    "Maven.s09-javaexaminator [clean].executor": "Run",
     "Maven.s09-javaexaminator [install].executor": "Run",
+    "Maven.s09-javaexaminator [test].executor": "Run",
     "Maven.s09-mathexaminer [clean].executor": "Run",
     "Maven.s09-mathexaminer [compile].executor": "Run",
     "Maven.s09-mathexaminer [deploy].executor": "Run",
@@ -129,7 +127,7 @@
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/father/IdeaProjects/s09-microservices/Examinator-core/data/inbound",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -169,7 +167,7 @@
       <recent name="org.zergatstage.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExamControllerTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.zergatstage.Application" />
       <module name="s09-javaexaminator" />
@@ -227,6 +225,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="examination-microservices" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="examination-microservices" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -264,9 +275,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.ExamControllerTest" />
         <item itemvalue="JUnit.ExamServiceTest" />
-        <item itemvalue="Application.Application" />
         <item itemvalue="Docker.build-scripts: Compose Deployment" />
         <item itemvalue="Application.RegexTest" />
       </list>
@@ -425,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725659788803</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: s09 - JavaExaminationService and JUnit test  for it">
+      <option name="closed" value="true" />
+      <created>1725805097018</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1725805097018</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -458,7 +477,8 @@
     <MESSAGE value="dev: prometheus + grafana @ examinator" />
     <MESSAGE value="feat: Spring IntegrationFileGateway added. Some logging added too" />
     <MESSAGE value="feat: s09 - javaexaminator added, and partially tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: s09 - javaexaminator added, and partially tested." />
+    <MESSAGE value="feat: s09 - JavaExaminationService and JUnit test  for it" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: s09 - JavaExaminationService and JUnit test  for it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
