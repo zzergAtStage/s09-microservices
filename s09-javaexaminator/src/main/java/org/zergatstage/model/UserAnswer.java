@@ -1,20 +1,21 @@
 package org.zergatstage.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 /**
  * @author father
  */
 @Entity
-@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne
-    private ExamSection section;
 
     @ManyToOne
     private JavaQuizQuestion question;

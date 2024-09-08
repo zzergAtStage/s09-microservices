@@ -17,10 +17,12 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class JavaQuizQuestion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private QuestionType questionType;
     private String questionText;
     private int difficultyLevel;
     private String correctAnswer;

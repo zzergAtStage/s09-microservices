@@ -1,11 +1,10 @@
 package org.zergatstage.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.zergatstage.DTO.ExamSubmissionDTO;
+import org.zergatstage.model.Exam;
 import org.zergatstage.model.User;
-import org.zergatstage.repository.UserRepository;
 import org.zergatstage.services.ExamService;
 import org.zergatstage.services.UserService;
 
@@ -19,11 +18,21 @@ public class ExamController {
     private final ExamService examService;
     private final UserService userService;
 
-    public ExamController(ExamService examService, UserRepository userRepository, UserService userService) {
+    public ExamController(ExamService examService, UserService userService) {
         this.examService = examService;
         this.userService = userService;
     }
 
+    @GetMapping("/quiz")
+    public ResponseEntity<Exam> getQuiz(@RequestParam int difficulty, int numberQuestions){
+        return ResponseEntity.ok(examService.getExam(difficulty, numberQuestions));
+    }
+
+    @GetMapping("/answered")
+    public ResponseEntity<Exam> getLastAnsweredExam(@RequestParam String sessionId){
+        Exam exam = examService.getSubmittedExamByUser(sessionId);
+        return ResponseEntity.ok(exam);
+    }
     @PostMapping("/submit")
     public ResponseEntity<Integer> submitExam(@RequestBody ExamSubmissionDTO submission) {
         int totalScore = examService.gradeExam(submission);
