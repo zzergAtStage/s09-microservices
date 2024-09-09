@@ -1,15 +1,16 @@
 [
   {
-    "questionType" : "SIMPLE",
-    "questionHeader": "What is Java?",
+    "questionType" : "CODE",
+    "questionHeader": "What will be the result of following code?",
+    "questionText" : "interface I {\n\t int i = 0;\n}",
     "difficultyLevel": 1,
-    "correctAnswer": "A programming language",
+    "correctAnswer": "Compilation fails",
     "points": 5,
     "choices": [
-      "A car brand",
-      "A programming language",
-      "A coffee type",
-      "An operating system"
+      "0",
+      "1",
+      "Compilation fails",
+      "An exception is thrown runtime"
     ]
   },
   {
@@ -247,8 +248,9 @@
     ]
   },
   {
-    "questionType" : "SIMPLE",
-    "questionHeader": "Which of these is not a feature of object-oriented programming?",
+    "questionType" : "CODE",
+    "questionHeader": "!!!!!!!Which of these is not a feature of object-oriented programming?",
+    "questionText" : "class Base { final public void show() { System.out.println(\"Base::show() called\"); }}",
     "difficultyLevel": 1,
     "correctAnswer": "Pointer Arithmetic",
     "points": 5,

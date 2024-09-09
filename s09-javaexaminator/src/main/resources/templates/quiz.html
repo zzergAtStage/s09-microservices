@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/quiz.css}">
+
+  <!-- Prism.js for code formatting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-java.min.js"></script>
+
+  <title>Quiz Page</title>
+</head>
+<body>
+
+<!-- Importing NavBar -->
+<div th:replace="~{navbar.html :: navbar}"></div>
+
+<div class="container py-5 px-4">
+  <h1 class="bg-danger text-light">Answer the Questions Below</h1>
+
+  <!-- The main form for quiz submission -->
+  <form action="/submitQuiz" method="POST" id="quizForm" th:object="${qForm}">
+    <div id="question-container">
+      <!-- Dynamic question will be inserted here using JavaScript -->
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="navigation-buttons mt-4">
+      <button type="button" class="btn btn-secondary" id="prevButton" onclick="prevQuestion()" disabled>Previous</button>
+      <button type="button" class="btn btn-primary" id="nextButton" onclick="nextQuestion()">Next</button>
+      <button type="submit" class="btn btn-success d-none" id="submitButton">Submit Quiz</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript to handle dynamic question display and code snippet formatting -->
+<script>
+  let currentQuestionIndex = 0;
+  let questions = []; // This will store the questions
+
+  // Load the questions from Thymeleaf data when the page is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    const qForm = JSON.parse(document.getElementById("questionData").textContent);
+    questions = qForm.sections.flatMap(section => section.userAnswers);
+
+    if (questions.length > 0) {
+      displayQuestion(currentQuestionIndex);
+    }
+  });
+
+  // Function to display the current question
+  function displayQuestion(index) {
+    const question = questions[index];
+    const questionContainer = document.getElementById("question-container");
+
+    questionContainer.innerHTML = `
+      <div class="ques-box bg-dark text-light">
+        <p class="title">${question.question.questionHeader}</p>
+
+        <!-- Conditionally render the code block if questionType is CODE -->
+        ${question.question.questionType === 'CODE' ? `
+          <pre><code class="language-java">${question.question.questionText}</code></pre>
+        ` : ''}
+
+        <div class="option">
+          ${question.question.choices.map((choice, i) => `
+            <div class="option-item">
+              <input type="radio" name="sections[${index}].userAnswers.selectedAnswer" value="${choice}">
+              <p>${choice}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <input type="hidden" name="sections[${index}].userAnswers.questionId" value="${question.question.id}">
+    `;
+
+    Prism.highlightAll(); // Highlight code blocks using Prism.js
+    updateNavigationButtons();
+  }
+
+  function nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
+      displayQuestion(currentQuestionIndex);
+    }
+  }
+
+  function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      displayQuestion(currentQuestionIndex);
+    }
+  }
+
+  // Update navigation buttons (enable/disable next/previous, show submit on last question)
+  function updateNavigationButtons() {
+    document.getElementById("prevButton").disabled = currentQuestionIndex === 0;
+    document.getElementById("nextButton").disabled = currentQuestionIndex === questions.length - 1;
+    document.getElementById("submitButton").classList.toggle('d-none', currentQuestionIndex !== questions.length - 1);
+  }
+</script>
+
+<!-- Hidden data for questions (populated by Thymeleaf) -->
+<script type="application/json" id="questionData" th:inline="javascript">
+  /*[[${qForm}]]*/
+</script>
+<!-- Importing Footer -->
+<div th:replace="~{footer.html :: footer}"></div>
+</body>
+</html>

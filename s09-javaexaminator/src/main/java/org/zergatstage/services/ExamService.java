@@ -44,7 +44,7 @@ public class ExamService {
     private IntegrationFileGateway fileGateway;
 
     public void writeQuestions(List<JavaQuizQuestion> questions) {
-        fileGateway.writeToFile("Sample_write_" + new Date().toString() + ": ", questions.toString());
+        fileGateway.writeToFile("Sample_write_" + new Date() + ": ", questions.toString());
 
     }
 
@@ -61,7 +61,7 @@ public class ExamService {
         exam.setSessionId(submission.getSessionId());
         exam.setUser(user);
         exam.setExamDate(LocalDateTime.now());
-        exam = examRepository.save(exam);
+        examRepository.save(exam);
 
         int totalScore = 0;
 
@@ -69,7 +69,7 @@ public class ExamService {
         for (Map.Entry<String, List<UserAnswerDTO>> sectionEntry : submission.getSectionAnswers().entrySet()) {
             ExamSection section = new ExamSection();
             section.setSectionName(sectionEntry.getKey());
-            section = examSectionRepository.save(section);
+            examSectionRepository.save(section);
 
             // Grade each question in the section
             for (UserAnswerDTO answerDTO : sectionEntry.getValue()) {
@@ -123,7 +123,7 @@ public class ExamService {
         //We're saving new exam, to grade it with submitted
         return examRepository.save(Exam.builder()
                 .examDate(LocalDateTime.now())
-                .user(userRepository.findById(1L).orElseThrow())
+                .user(userRepository.findById(1L).orElseThrow())//TODO: replace user selection logic
                 .sections(sectionsSaved)
                 .sessionId(UUID.randomUUID().toString())
                 .build());
