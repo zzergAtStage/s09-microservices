@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zergatstage.s09history.model.ExamQuestion;
 import com.zergatstage.s09history.repositories.HistoryRepository;
 import jakarta.annotation.PostConstruct;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -24,6 +25,8 @@ import java.util.logging.Logger;
 @RequiredArgsConstructor
 @AllArgsConstructor
 public class QuestionLoaderService {
+
+
     @Value("${questions.file}")
     private String fileName;
     @Autowired
@@ -34,7 +37,7 @@ public class QuestionLoaderService {
     public void loadQuestionsFromFile(){
 
 
-
+        Logger.getAnonymousLogger().info("Fill DB with some data");
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
 
         if (inputStream == null) {
