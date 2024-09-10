@@ -1,11 +1,65 @@
 # Quiz App (s09-javaexaminator)
- ## Общее описание
+ ## Summary
 The application is designed for use both as a standalone Spring Boot MVC application and as part of a microservice module (see the relevant section).
 ## Features
 - **Quiz Taking:** Users can participate in quizzes featuring multiple-choice questions.
 - **Answer Submission:** Users can submit their answers for each question in the quiz.
 - **Submission Management:** User can view and delete submissions.
 - **Answer Highlighting:** Incorrect answers are highlighted, and correct answers along with explanations are displayed.
+
+## Data formats:
+The main source of questions is questions.json:
+[exam.json](./data/exam.json)
+```plantuml
+@startuml
+title Exam JSON Structure
+
+class Exam {
+    exam_id
+    sessionId
+    examDate
+    user
+    sections
+}
+
+class User {
+    id
+    username
+}
+
+class Section {
+    section_id
+    sectionName
+    userAnswers
+}
+
+class JavaQuizQuestion {
+    question_id
+    questionType
+    questionHeader
+    questionText
+    difficultyLevel
+    correctAnswer
+    correctAnswerExplanation
+    points
+    choices
+}
+
+class UserAnswer {
+    id: Long
+    question: JavaQuizQuestion
+    userAnswer: String
+    correct
+    pointsAwarded
+}
+
+Exam "1" -- "*" User : has
+Exam "1" -- "*" Section : contains
+Section "1" -- "*" UserAnswer : has
+JavaQuizQuestion::question_id "1" -- "*" UserAnswer::question : has
+
+@enduml
+```
 
 ## Getting Started
 
