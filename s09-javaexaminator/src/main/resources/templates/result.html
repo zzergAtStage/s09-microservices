@@ -13,7 +13,7 @@
 <body>
 
 <!-- Importing NavBar -->
-<div th:insert="navbar.html :: navbar"></div>
+<div th:insert="~{navbar.html :: navbar}"></div>
 
 <!-- Main Container Start -->
 <div class="main-container container py-5 px-4">
@@ -24,22 +24,22 @@
 
     <div class="d-flex justify-content-center">
       <p>Participant name:&nbsp;&nbsp;</p>
-      <p th:if="${result}" th:text="${result.username}"></p>
+      <p th:text="${username}">user</p>
     </div>
 
     <div class="d-flex justify-content-center">
       <p>Total correct answer:&nbsp;&nbsp;</p>
-      <p th:if="${result}" th:text="${result.totalCorrect}"></p>
+      <p th:if="${totalScore}" th:text="${totalScore}"></p>
     </div>
 
     <div class="d-flex justify-content-center">
       <p>Total false answer:&nbsp;&nbsp;</p>
-      <p th:if="${result}" th:text="5 - ${result.totalCorrect}"></p>
+      <p th:if="${totalCorrect}" th:text="5 - ${totalCorrect}"></p>
     </div>
 
     <div class="d-flex justify-content-center mt-4">
-      <button type="button" th:onclick="window.location.href='/score'"
-              class="btn btn-outline-warning mx-auto">View Score Board</button>
+      <button type="button" th:onclick="window.location.href='/submissions'"
+              class="btn btn-outline-warning mx-auto">Review submits</button>
       <button type="button" th:onclick="window.location.href='/'"
               class="btn btn-outline-warning mx-auto">Back to Homepage</button>
     </div>
@@ -47,7 +47,7 @@
 </div>
 
 <!-- Importing Footer -->
-<div th:insert="footer.html :: footer"></div>
+<div th:insert="~{footer.html :: footer}"></div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>

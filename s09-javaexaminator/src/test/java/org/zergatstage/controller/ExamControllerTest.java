@@ -79,7 +79,7 @@ class ExamControllerTest {
     void testGetLastAnsweredExamSuccess() throws Exception {
         // Mocking the service response for fetching the last answered exam
         Exam mockExam = new Exam();
-        when(examService.getSubmittedExamByUser("session123")).thenReturn(mockExam);
+        when(examService.getSubmittedExamBySessionId("session123")).thenReturn(mockExam);
 
         // Simulating a GET request and verifying the response
         mockMvc.perform(get("/exam/answered")
@@ -88,7 +88,7 @@ class ExamControllerTest {
                 .andExpect(jsonPath("$.id").doesNotExist()); // Mock response will not have an ID
 
         // Verify interaction with the service layer
-        verify(examService, times(1)).getSubmittedExamByUser("session123");
+        verify(examService, times(1)).getSubmittedExamBySessionId("session123");
     }
 
 

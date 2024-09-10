@@ -10,7 +10,6 @@ import org.zergatstage.DTO.UserAnswerDTO;
 import org.zergatstage.model.*;
 import org.zergatstage.repository.*;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -162,13 +161,13 @@ class ExamServiceTest {
     }
 
     @Test
-    void testGetSubmittedExamByUser() {
+    void testGetSubmittedExamBySessionId() {
         // Mock the repository behavior
         Exam mockExam = new Exam();
         when(examRepository.findBySessionId("session123")).thenReturn(mockExam);
 
         // Test method
-        Exam result = examService.getSubmittedExamByUser("session123");
+        Exam result = examService.getSubmittedExamBySessionId("session123");
 
         assertNotNull(result);
         verify(examRepository, times(1)).findBySessionId("session123");

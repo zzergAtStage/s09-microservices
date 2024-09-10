@@ -12,7 +12,7 @@ import org.zergatstage.services.UserService;
  * @author father
  */
 @RestController
-@RequestMapping("/exam")
+@RequestMapping("/api/v1/exam")
 public class ExamController {
 
     private final ExamService examService;
@@ -23,14 +23,14 @@ public class ExamController {
         this.userService = userService;
     }
 
-    @GetMapping("/quiz")
-    public ResponseEntity<Exam> getQuiz(@RequestParam int difficulty, int numberQuestions){
+    @GetMapping("/generate")
+    public ResponseEntity<Exam> generateQuiz(@RequestParam int difficulty, int numberQuestions){
         return ResponseEntity.ok(examService.getExam(difficulty, numberQuestions));
     }
 
     @GetMapping("/answered")
     public ResponseEntity<Exam> getLastAnsweredExam(@RequestParam String sessionId){
-        Exam exam = examService.getSubmittedExamByUser(sessionId);
+        Exam exam = examService.getSubmittedExamBySessionId(sessionId);
         return ResponseEntity.ok(exam);
     }
     @PostMapping("/submit")

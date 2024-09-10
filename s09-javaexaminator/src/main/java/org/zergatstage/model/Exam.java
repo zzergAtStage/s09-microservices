@@ -2,9 +2,12 @@ package org.zergatstage.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.zergatstage.DTO.UserAnswerDTO;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author father

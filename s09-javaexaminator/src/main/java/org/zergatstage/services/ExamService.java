@@ -1,6 +1,5 @@
 package org.zergatstage.services;
 
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zergatstage.DTO.ExamSubmissionDTO;
@@ -10,7 +9,6 @@ import org.zergatstage.repository.*;
 
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author father
@@ -20,33 +18,20 @@ public class ExamService {
 
     private static final int SECTIONS_NUMBER = 3;
     @Autowired
-    @Setter
     private JavaQuizRepository questionRepository;
 
     @Autowired
-    @Setter
     private ExamRepository examRepository;
 
     @Autowired
-    @Setter
     private ExamSectionRepository examSectionRepository;
-
     @Autowired
-    @Setter
     private UserAnswerRepository userAnswerRepository;
-
     @Autowired
-    @Setter
     private UserRepository userRepository;
-
     @Autowired
-    @Setter
-    private IntegrationFileGateway fileGateway;
+    private UserService userService;
 
-    public void writeQuestions(List<JavaQuizQuestion> questions) {
-        fileGateway.writeToFile("Sample_write_" + new Date() + ": ", questions.toString());
-
-    }
 
     /**
      * Grades the answers submitted by the user and stores the results.
@@ -97,12 +82,22 @@ public class ExamService {
 
     /**
      * Generates exam entity and related entities and question set
-     *
+     *  @param difficulty      From 1 to 3 difficulty growing
+     *  @param numberQuestions Number of questions
+     *  @return Exam entity
+     */
+    public Exam getExam(int difficulty, int numberQuestions) {
+        return getExam(userService.registerUser("DummyUser"), difficulty,numberQuestions);
+    }
+
+    /**
+     * Generates exam entity and related entities and question set
+     * @param user            User object
      * @param difficulty      From 1 to 3 difficulty growing
      * @param numberQuestions Number of questions
      * @return Exam entity
      */
-    public Exam getExam(int difficulty, int numberQuestions) {
+    public Exam getExam(User user, int difficulty, int numberQuestions) {
         List<JavaQuizQuestion> questions = questionRepository.findByDifficultyLevelLessThanEqual(difficulty);
         // Ensure we have enough questions to create 3 sections with the specified number of questions
         if (questions.size() < 3 * numberQuestions) {
@@ -113,7 +108,7 @@ public class ExamService {
         List<ExamSection> sections = new ArrayList<>();
         for (int i = 0; i < SECTIONS_NUMBER; i++) {
             sections.add(ExamSection.builder()
-                    .sectionName("Section #" + i + 1)
+                    .sectionName("Section #" + (i + 1))
                     .userAnswers(getQuestionsPool(queue, numberQuestions))
                     .build());
 
@@ -123,21 +118,40 @@ public class ExamService {
         //We're saving new exam, to grade it with submitted
         return examRepository.save(Exam.builder()
                 .examDate(LocalDateTime.now())
-                .user(userRepository.findById(1L).orElseThrow())//TODO: replace user selection logic
+                .user(user)
                 .sections(sectionsSaved)
                 .sessionId(UUID.randomUUID().toString())
                 .build());
     }
 
     private List<UserAnswer> getQuestionsPool(Queue<JavaQuizQuestion> queue, int numberQuestions) {
-        return queue.stream()
-                .map(question -> UserAnswer.builder()
-                        .question(question).build())
-                .limit(numberQuestions)
-                .collect(Collectors.toList());
+        List<UserAnswer> userAnswers = new ArrayList<>();
+
+        // Dequeue the specified number of questions
+        for (int i = 0; i < numberQuestions && !queue.isEmpty(); i++) {
+            JavaQuizQuestion question = queue.poll(); // poll() removes the head of the queue
+            if (question != null) {
+                userAnswers.add(UserAnswer.builder()
+                        .question(question)
+                        .build());
+            }
+        }
+
+        return userAnswers;
     }
 
-    public Exam getSubmittedExamByUser(String sessionId) {
+    public Exam getSubmittedExamBySessionId(String sessionId) {
         return examRepository.findBySessionId(sessionId);
+    }
+
+    public List<Exam> getSubmittedExamsByUser(User user) {
+        return examRepository.findByUser(user);
+    }
+    public void saveSubmittedExam(Exam exam) {
+        examRepository.save(exam);
+    }
+
+    public void deleteSubmission(Exam exam) {
+        examRepository.delete(exam);
     }
 }

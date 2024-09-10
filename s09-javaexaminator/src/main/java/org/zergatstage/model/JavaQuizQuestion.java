@@ -27,6 +27,7 @@ public class JavaQuizQuestion {
     private String questionText;
     private int difficultyLevel;
     private String correctAnswer;
+    private String correctAnswerExplanation;
     private int points;
 
     @ElementCollection

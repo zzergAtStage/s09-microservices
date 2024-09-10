@@ -12,6 +12,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Quiz App</a>
+    <li>
+      <button type="button" th:classappend="${username} ? 'btn btn-warning' : 'btn btn-secondary disabled'" th:href="@{/quiz}" th:onclick="window.location.href='/quiz'" >
+        Start Quiz
+    </button>
+    </li>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,8 +25,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/score">Score Board</a>
+        <li class="nav-item" >
+          <a class="nav-link" href="/submissions">Submissions</a>
         </li>
       </ul>
     </div>
